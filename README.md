@@ -101,6 +101,8 @@ The credentials for the namespace and the service account are mounted at the sam
 
 Another useful consequence of using Kubernetes is that you can easily spin it up on all big clouds and use features like auto-scaling and preemptible virtual machines. This may reduce your costs for your CI system significantly, because VMs are only started on demand and shut down if no jobs are running. And with preemptible virtual machines you may save even more, because they are a lot cheaper, but can be stopped at any time by your cloud provider. In case of a shutdown or failure of a VM, Kubernetes will restart your job and InfraBox can handle this.
 
-This was a quick run through some of the issues we faced with our CI solutions and how we can overcome them with the help of InfraBox. If you want to try out Infrabox just head over to the [github](https://github.com/InfraBox/infrabox) repository and follow the installation instructions. Also don't miss the introduction video in which some more features are explained.
+This was a quick run through of some of the issues we faced with our CI solutions and how we can overcome them with the help of InfraBox. The current version is stable and it's already used in production for testing SAP Data Hub. The feature set of InfraBox will be extended in the coming months. 
+
+If you want to try out Infrabox just head over to the [github](https://github.com/InfraBox/infrabox) repository and follow the installation instructions. Also don't miss the introduction video in which some more features are explained. As this is an open  source project please provide feedback or even better start contributing. Any help is welcome!
 
 More examples can be found in the [InfraBox example repository](https://github.com/InfraBox/examples).
