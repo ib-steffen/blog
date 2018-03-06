@@ -77,7 +77,7 @@ To be even more flexible InfraBox offers some more features. You may _include_ s
 
 We mentioned earlier that reproducibility is sometimes a big issue. With InfraBox it's possible to not only to run jobs as containers on a Kubernetes cluster, but also download the containers (including its inputs & caches) to your local machine and execute exactly the same container again. So you don't have to ssh into a build machine anymore, instead you can reproduce your issues at your machine with all your tools you have installed.
 
-Last but not least is the Kubernetes integration. InfraBox is able to provision a Kubernetes namespace with an separate service account for each of your jobs. So you may use it to deploy your application into a temporary namespace and run your tests. When your job finishes, InfraBox will cleanup after your job, so you don't have to deal with leftovers. Kubernetes supports quotas for namespaces which can also make sure that a certain job does not use too many resources. And for the isolation of namespaces features like Network Policies are used to further isolate the Kubernetes namespaces and make sure your jobs are isolated from others as good as possible, even if you use a temporary namespace.
+Last but not least is the Kubernetes integration. InfraBox is able to provision a Kubernetes namespace with an separate service account for each of your jobs. So you may use it to deploy your application into a temporary namespace and run your tests. When your job finishes, InfraBox will cleanup after your job, so you don't have to deal with leftovers. Kubernetes supports quotas for namespaces which can also make sure that a certain job does not use too many resources in its namespace. And for the isolation of namespaces features like Network Policies are used to further isolate the Kubernetes namespaces and make sure your jobs are isolated from others as good as possible, even if you use a temporary namespace.
 
 To provision a temporary namespace simply add another resource to your job definition:
 
@@ -97,7 +97,7 @@ To provision a temporary namespace simply add another resource to your job defin
 }
 ```
 
-The credentials for the namespace and the service account are mounted at the same location as Kubernetes would do it. So for your job it feels like you are running in a regular pod on kubernetes and may use it exactly the same way. For a full example how to access the namespace with _kubectl_ see our [example](https://github.com/InfraBox/examples/tree/master/kubernetes).
+The credentials for the service account are mounted at the same location as Kubernetes would do it. So for your job it feels like you are running in a regular pod on kubernetes and may use it exactly the same way. For a full example how to access the namespace with _kubectl_ see our [example](https://github.com/InfraBox/examples/tree/master/kubernetes).
 
 Another useful consequence of using Kubernetes is that you can easily spin it up on all big clouds and use features like auto-scaling and preemptible virtual machines. This may reduce your costs for your CI system significantly, because VMs are only started on demand and shut down if no jobs are running. And with preemptible virtual machines you may save even more, because they are a lot cheaper, but can be stopped at any time by your cloud provider. In case of a shutdown or failure of a VM, Kubernetes will restart your job and InfraBox can handle this.
 
