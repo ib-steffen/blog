@@ -1,4 +1,4 @@
-# InfraBox
+# A Cloud Native CI System
 InfraBox is an [open source](https://github.com/InfraBox/infrabox) continuous integration system based on Kubernetes. It can be used to run all your CI jobs like compilation of your software, tests and benchmarks, but it is not limited to it.
 Many people ask why do we need another CI system, because there are already plenty out there. We at SAP DataHub found that these CI tools did not solve many of our CI problems.
 Now depending on the CI tool you use you may have the same or similar issues:
