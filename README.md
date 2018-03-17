@@ -15,9 +15,15 @@ Now depending on the CI tool you use you may have the same or similar issues:
 
 - __Native Kubernetes Support__: As we build a Cloud Native application on top of Kubernetes we want our CI tool to natively integrate with it. So it makes our lives easier when we run all our tests. This is not yet the case with other CI systems.
 
-To better deal with these issues we came up with a new CI system called InfraBox, which runs everything in Docker containers on a Kubernetes cluster. Let's have a look at a simple "hello world" example to demonstrate its benefits.
+To better deal with these issues we came up with a new CI system called InfraBox, which runs everything in Docker containers on a Kubernetes cluster. Before we ran jobs doing multiple jobs, but leaving quite some resources unused.
 
-You need two files for you first InfraBox job. All starts with a Dockerfile in which you can define what should be executed. InfraBox will build and run the container. A very simple Dockerfile looks like this:
+![One Job](./Folie1.PNG)
+
+Now we can run multiple jobs in parallel with different resource limits and a much better isolation.
+
+![Multiple Jobs](./Folie2.PNG)
+
+Let's have a look at a simple "hello world" example to demonstrate its benefits. You need two files for you first InfraBox job. All starts with a Dockerfile in which you can define what should be executed. InfraBox will build and run the container. A very simple Dockerfile looks like this:
 
 ```
 FROM alpine
