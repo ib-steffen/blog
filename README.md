@@ -47,7 +47,7 @@ The second file you need is _infrabox.json_ in the root directory of your projec
 }
 ```
 
-As you can see we define one job with type __docker__ (InfraBox supports also other job types, see here), a name, the path to the Dockerfile (docker_file), assign resource limits and tell it to not only build but also run the Docker container (build_only). That's it. You can now run the job on your local machine with the [infraboxcli](https://github.com/infrabox/cli)
+As you can see we define one job with type __docker__ (InfraBox supports also other job types, see [the InfraBox examples](https://github.com/InfraBox/examples/tree/master)), a name, the path to the Dockerfile (docker_file), assign resource limits and tell it to not only build but also run the Docker container (build_only). That's it. You can now run the job on your local machine with the [infraboxcli](https://github.com/infrabox/cli)
 
 ```
 infrabox run
